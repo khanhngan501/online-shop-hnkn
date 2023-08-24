@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #header {
+    font-family: 'Qwitcher Grypen', cursive;
+  }
+}
