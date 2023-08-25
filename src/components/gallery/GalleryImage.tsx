@@ -1,26 +1,29 @@
 function GalleryImage() {
 
     const images = [
-        "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1824,c_limit/b3e44fd7-df8f-449a-a2c7-48bb948518ab/men-s-shoes-clothing-accessories.png",
-        "https://i.pinimg.com/564x/4f/0e/ae/4f0eae7968b70c2784e702f1bd1583ba.jpg",
-        "https://i.pinimg.com/564x/0e/b3/fe/0eb3fe3d7576a1ef58e7dc241018199c.jpg",
-        "https://i.pinimg.com/564x/28/b7/13/28b713d4ac081cf82c388cf9a663f896.jpg",
-        "https://i.pinimg.com/564x/31/27/ef/3127effae8cd24fe814325c014ae449e.jpg"
+        "https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/b382b7dc-9240-4b09-a07a-3bd26b10ead2/iPhone_B07/w=3840,quality=80",
+        "https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/2facaa80-d2eb-4763-9112-fef493c68e86/B07_Macbook_Air_M2/w=3840,quality=80",
+        "https://public-files.gumroad.com/r6eigc72el6khet8okl5p4xnbpu4",
+        "https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/d7f74adc-0081-4eed-81dd-8319a178be2c/Window_Banner_Mockup/w=3840,quality=80",
+        "https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/4742f932-23da-4b65-9f1b-6bd084930d98/02/w=3840,quality=80"
     ]
     return(
         <section className="mx-auto max-w-screen-xl mb-16">
-            <h2 className="text-7xl tracking-wide font-normal mb-4" id="header">Thương hiệu nổi bật</h2>
-            <div className="grid grid-cols-3 grid-rows-[450px] gap-4">
+            <h2 className="text-7xl tracking-wide font-normal mb-4 max-sm:text-4xl" id="header">Thương hiệu nổi bật</h2>
+            <div className="grid grid-cols-3 grid-rows-[450px] gap-4 max-sm:flex max-sm:flex-col">
                 {/* Collection banner brands */}
                 {
                     images.map((item, index) => {
                         const first = (index === 0) ? "col-[1_/_3]" : ""
                         return(
-                            <a key={index} className={`${first} cursor-pointer`} href="#">
+                            <a key={index} className={`${first} cursor-pointer relative`} href="#">
                                 <img src={item} 
                                     className="w-full h-full object-cover rounded-xl"
-                                    alt="brand"  
+                                    alt="brand" 
                                 />
+                                <div className="absolute bottom-0">
+                                    MacBook Ari 2019
+                                </div>
                             </a>
                         )
                     })

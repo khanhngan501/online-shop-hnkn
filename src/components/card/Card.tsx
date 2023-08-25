@@ -6,7 +6,7 @@ function Card( props: any ) {
     const [ background, setBackground ] = useState('invisible')
     // console.log(prod)
     return(
-        <div className="px-8 py-5 relative bg-[#F2F2F2] rounded-xl" 
+        <div className="px-8 py-5 relative bg-[#F2F2F2] rounded-xl max-sm:text-[12px] max-sm:px-6 max-sm:py-3" 
             onMouseOver={() => {
                 setColorText("text-white")
                 setBackground("visible")
