@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body {
+  background-color: #f1f1f1;
+}
 @layer base {
   #header {
     font-family: 'Qwitcher Grypen', cursive;

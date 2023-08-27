@@ -2,7 +2,7 @@ import { IconButton, List, ListItem, Menu, MenuItem, Slide, ThemeProvider, Toolb
 import AppBar from "@mui/material/AppBar";
 import Dialog from "@mui/material/Dialog"
 import { TransitionProps } from "@mui/material/transitions";
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 const lightTheme = createTheme({
     palette: {
@@ -19,10 +19,10 @@ const Transition = forwardRef(function Transition(
         ref: React.Ref<unknown>,
     ) {
     return <Slide direction="right" ref={ref} {...props} />;
-});  
+})
 function Header() {
     const [open, setOpen] = useState(false);
-
+    const [ headerColor, setHeaderColor ] = useState("bg-white")
     // const handleClickOpen = () => {
     //     setOpen(true);
     // };
@@ -34,9 +34,24 @@ function Header() {
     const handleClose = () => {
         setOpen(false);
     }
+    const handleScroll = () => {
+        if (window.scrollY > 60) {
+            setHeaderColor("bg-[#21202075]")
+        } else {
+            setHeaderColor("bg-white")
+        }
+        
+    }
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+            console.log("Remove scroll function")
+        }
+    }, [])
     return(
 
-        <section className="mx-auto max-w-screen-xl mb-16">
+        <section className="mx-auto max-w-screen-xl mb-16 sticky top-0 z-50 h-[60px] max-sm:mb-4">
             <Dialog
                 fullScreen
                 open={open}
@@ -68,7 +83,7 @@ function Header() {
                     <ListItem>Giới thiệu</ListItem>
                 </List>
             </Dialog>
-            <header className="bg-lime-700 grid grid-cols-3 h-16 items-center justify-between mb-6 max-sm:w-screen max-sm:px-2"
+            <header className={`${headerColor} grid grid-cols-3 h-full items-center justify-between mb-6 max-sm:w-screen max-sm:px-2 max-sm:mb-0`}
             >
                 <div onClick={()=>setOpen(true)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"     
@@ -118,27 +133,6 @@ function Header() {
                     </svg>
                 </div>
             </header>
-            {/* Hero header */}
-            <div className="relative w-full">
-                <img src="https://i.postimg.cc/k5dhRt8p/c89024f56fe43c8cf97c63118f68fa1e77897db1-2864x1522.webp" 
-                    className="rounded-xl max-sm:hidden"
-                    alt="background-image-header"
-                />
-                <div className="absolute top-0 w-full flex flex-col items-center text-center sm:p-4 max-sm:relative">
-                    <img src="https://i.postimg.cc/7ZzWLNCz/179f4b7afde32e020782f329f39f7d75d3894970-774x626.webp" 
-                        className="sm:max-w-[327px] mb-4 max-sm:w-screen max-sm:object-cover"
-                        alt="product image" 
-                    />
-                    <div className="flex items-center flex-col">
-                        <h3 className="uppercase text-xl font-medium mb-4 max-sm:font-normal max-sm:text-base">Sản phẩm nổi bật</h3>
-                        <h1 className="font-serif text-6xl tracking-wide mb-3 max-sm:text-4xl">Tropical Green</h1>
-                        <p className="tracking-wide max-sm:text-sm mb-4">Tươi mới, hứng khởi và cảm giác vui vẻ</p>
-                        <div className="py-4 px-8 max-sm:py-2 max-sm:px-6 w-fit rounded-full bg-slate-800 text-white cursor-pointer">
-                            <span>Cửa hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
     )
 }
