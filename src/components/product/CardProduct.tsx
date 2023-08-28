@@ -41,16 +41,20 @@ function CardProduct( props:any ) {
                     className="h-64 w-full object-contain transition duration-500 group-hover:scale-105 sm:h-72 max-sm:h-32"
                 />
             </div>
+            <div className="text-xs pl-2 w-full mb-2 sm:mb-0 sm:pl-6">
+                <span className="border-[1.5px] p-1 rounded-sm">RAM {item.ram}</span>
+                <span className="border-[1.5px] p-1 rounded-sm sm:ml-2">{item.storage}</span>
+            </div>
             <div className="relative p-6 max-sm:p-2">
                 {/* <span
                     className="whitespace-nowrap bg-yellow-400 px-3 py-1.5 text-xs font-medium"
                 >
                     New
                 </span> */}
-                <h3 className="text-lg tracking-wide text-gray-900 max-sm:text-sm">{item.name}</h3>
+                <h3 className="text-lg tracking-wide text-gray-900 max-sm:text-sm sm:font-medium sm:mb-2">{item.name}</h3>
                 <p className="font-medium text-sm text-red-700 max-sm:mb-1">{item.price}$</p>
                 {
-                (open)?<div className="text-[#222] max-sm:text-xs max-sm:flex max-sm:flex-col max-sm:justify-around">
+                (open)?<div className="text-[#222] max-sm:text-xs max-sm:flex max-sm:flex-col max-sm:justify-around sm:text-[14px]">
                     <div className="max-sm:mb-1">
                         <p className="max-sm:leading-5">Màn hình: {item.screen}</p>
                         <p className="max-sm:leading-5">CPU: {item.chip}</p>
@@ -64,7 +68,6 @@ function CardProduct( props:any ) {
                     </div>
                 </div> : null
                 }
-                
                 <div className="flex justify-center sm:hidden">
                     <a href="/"
                         className="text-blue-400 underline text-sm font-medium transition hover:scale-105 max-sm:p-1 max-sm:text-xs max-sm:font-normal"

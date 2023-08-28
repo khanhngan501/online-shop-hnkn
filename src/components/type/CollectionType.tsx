@@ -42,11 +42,12 @@ function CollectionType() {
         },
     ]
     return(
-        <div className="bg-[#e0e0e0] max-sm:px-4 max-sm:py-4 max-sm:max-w-full max-sm:mb-6">
-            <div className="grid max-sm:grid-cols-3 max-sm:gap-4">
+        <div className="bg-[#e0e0e0] max-sm:px-4 max-sm:py-4 max-sm:max-w-full max-sm:mb-6
+        sm:w-full sm:py-8 sm:mb-16 2xl:mx-auto 2xl:max-w-screen-xl">
+            <div className="grid max-sm:grid-cols-3 max-sm:gap-4 sm:grid-cols-4 sm:w-full sm:gap-y-6">
             {
                 brands.map((value, index) => (
-                    <a href="#" key={index}>
+                    <a href="#" key={index} className="sm:w-fit sm:mx-auto">
                         <img src={value.img} alt="logo" className="bg-white rounded-xl max-sm:p-2" />
                     </a>
                 ))

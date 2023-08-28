@@ -1,8 +1,12 @@
 function PostItem() {
     return(
-        <div>
-            <a href="/">
-                <img src="https://gstatic.gvn360.com/2023/08/image4-8-218x150.jpg" alt="anh bai post" />
+        <div className=" hover:cursor-pointer hover:bg-[#393a3c2d] sm:px-3">
+            <a href="/"
+                className="sm:grid sm:grid-cols-[200px_,1fr] gap-x-8"
+            >
+                <img src="https://gstatic.gvn360.com/2023/08/image4-8-218x150.jpg" alt="anh bai post" 
+                    className="h-36 w-auto object-contain sm:row-span-2"
+                />
                 <p className="text-white max-sm:text-sm">
                     Corsair mở bán bàn phím K70 MAX và tai nghe HS80 MAX với khả năng điều khiển và tùy biến vượt trội
                 </p>
