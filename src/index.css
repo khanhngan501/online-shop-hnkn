@@ -4,6 +4,9 @@
 body {
   background-color: #f1f1f1;
 }
+.parameters-prod li:nth-child(2n+1) {
+  background-color: #5a575725;
+}
 @layer base {
   #header {
     font-family: 'Qwitcher Grypen', cursive;
