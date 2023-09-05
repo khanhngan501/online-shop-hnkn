@@ -1,8 +1,6 @@
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css";
 
-import Footer from "../components/footer/Footer"
-import Header from "../components/header/Header"
 import CardProduct from "../components/product/CardProduct"
 import CollectionType from "../components/type/CollectionType"
 import PostCard from "../components/card/PostCard";
@@ -98,7 +96,6 @@ const topSeller = [
 function Home() {
     return (
         <>
-            <Header />
             {/* Collections type */}
             <CollectionType />
             {/* Collections product hot seller */}
@@ -191,7 +188,6 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <Footer />
         </>
     )
 }

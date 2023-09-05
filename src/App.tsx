@@ -1,13 +1,14 @@
-// import Home from "./page/Home"
-
-import Details from "./page/details/Details"
+import { Outlet } from "react-router-dom"
+import Footer from "./components/footer/Footer"
+import Header from "./components/header/Header"
 
 
 function App() {
-  return(
-    // <Home />
+  return (
     <>
-      <Details />
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   )
 }

@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 function CardProduct( props:any ) {
     const { item } = props
     const [ open, setOpen ] = useState(false)
+    const nav = useNavigate()
 
     const handleClickProd = (e:React.MouseEvent<HTMLAnchorElement>) => {
         if (window.innerWidth  < 640) {
             e.preventDefault()
-            console.log("man hinh nho")
         } else {
-            console.log("Man hinh lon")
+            nav('/product/1223')
         }
     }
 
@@ -31,7 +32,7 @@ function CardProduct( props:any ) {
     }, [])
 
     return (
-        <a href="/" className="group shadow-cardShadow relative block overflow-hidden bg-white"
+        <div className="group hover:cursor-pointer shadow-cardShadow relative block overflow-hidden bg-white"
             onClick={handleClickProd}
         >
             <div className="max-sm:px-2">
@@ -63,7 +64,9 @@ function CardProduct( props:any ) {
                         <p className="max-sm:leading-5">Khối lượng: {item.weight} kg</p>
                     </div>
                     <div className="flex justify-around sm:hidden">
-                        <button className="bg-green-300 font-medium rounded-md text-xs tracking-wide max-sm:px-2 max-sm:py-1">Chi tiết</button>
+                        <button className="bg-green-300 font-medium rounded-md text-xs tracking-wide max-sm:px-2 max-sm:py-1" onClick={()=>nav('/product/123')}>
+                            Chi tiết
+                        </button>
                         <button className="bg-blue-600 text-white font-medium rounded-md text-xs tracking-wide max-sm:px-2 max-sm:py-1">Mua</button>
                     </div>
                 </div> : null
@@ -80,7 +83,7 @@ function CardProduct( props:any ) {
                     </a>
                 </div>
             </div>
-        </a>
+        </div>
     )
 }
 export default CardProduct

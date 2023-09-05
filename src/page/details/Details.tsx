@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
-import Header from "../../components/header/Header"
 import { createPortal } from "react-dom"
+
 import InfoProd from "../../components/dialog/InfoProd"
 
 const images = [
@@ -174,7 +174,6 @@ function Details() {
 
     return (
         <section className="bg-white">
-            <Header />
             {/* Name product */}
             <div className="text-sm font-medium tracking-wide leading-5 mb-4 sm:text-lg sm:px-6 lg:text-xl xl:px-20 2xl:mx-auto 2xl:max-w-screen-xl 2xl:px-0">
                 <h2>Laptop Apple MacBook Air 13 inch M2 2022 8-core CPU/8GB/256GB/8-core GPU (MLXY3SA/A)</h2>
@@ -312,7 +311,7 @@ function Details() {
             </div>
             {/* Section for review product */}
             {/* Comment/discussion */}
-            <div className="lg:mb-16 2xl:mx-auto 2xl:w-auto 2xl:max-w-screen-xl 2xl:px-0">
+            <div className="md:px-6 lg:px-0 lg:mb-16 2xl:mx-auto 2xl:w-auto 2xl:max-w-screen-xl 2xl:px-0">
                 <div className="border-[1px] rounded-md mb-4 p-2 sm:mx-auto lg:w-1/2 xl:ml-20 2xl:m-0 2xl:w-3/4">
                     {/* Writing new comment */}
                     <div className="text-sm border-b-[1px] border-b-gray-500 mb-4">
